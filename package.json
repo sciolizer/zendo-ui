@@ -1,0 +1,38 @@
+{
+  "name": "zendo-ui",
+  "version": "0.0.1",
+  "description": "UI for playing zendo, an inductive logic game",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sciolizer/zendo-ui.git"
+  },
+  "keywords": [
+    "zendo",
+    "logic",
+    "game",
+    "induction",
+    "inference"
+  ],
+  "author": "JoshBBall@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sciolizer/zendo-ui/issues"
+  },
+  "homepage": "https://github.com/sciolizer/zendo-ui",
+  "devDependencies": {
+    "LiveScript": "^1.3.1",
+    "browserify": "^8.1.1",
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "jquery": "^2.1.3",
+    "prelude-ls": "^1.1.1"
+  }
+}
