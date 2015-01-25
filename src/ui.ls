@@ -24,3 +24,31 @@ on-rule-input-change = ->
   $('#other-interpretations').html(interpretations-html)
 
 rule-input.on 'input', on-rule-input-change
+
+/*
+koans:
+  add :: String -> Bool -> IO ()
+  clear :: IO ()
+koan:
+  on-keydown :: (String -> IO ()) -> IO ()
+  on-enter :: IO () -> IO () -- clicking Mark also counts as clicking enter.
+  show-help :: String -> IO ()
+rule:
+  on-keydown :: (String -> IO ()) -> IO ()
+  on-enter :: (String -> IO ()) -> IO ()
+paraphrases:
+  set :: [String] -> IO ()
+  clear :: IO ()
+suggestions:
+  set :: [String] -> IO ()
+  error :: String -> IO ()
+quit:
+  on-click :: IO () -> IO ()
+new-game:
+  on-click :: (Int {- difficulty -} -> IO ()) -> IO ()
+winlose:
+  win :: Stats -> IO ()
+  lose :: String {- solution -} -> IO ()
+*/
+module.exports = {
+}
