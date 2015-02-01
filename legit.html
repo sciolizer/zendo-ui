@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Zendo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zendo, the inductive logic game, with playing cards">
+  <meta name="author" content="JoshBBall@gmail.com">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+<div class="jumbotron">
+  <div class="container">
+	  <div class="row clearfix">
+	  	<div class="col-md-12 column">
+	  		<h3>
+	  			Zendo, the inductive logic game
+	  		</h3>
+			<p>
+      A sequence of playing cards is called a koan. Some koans have the buddha nature, while others do not. The koans appear below.
+      Koans possessing the buddha nature are marked with a check mark, while koans lacking the buddha nature are marked
+      with a cross. Your task is to discern the buddha nature.
+      </p>
+      <p>
+      You may create your own koans, and ask me to mark them as either having or not having the buddha nature. You may also
+      type the rule which you think is the secret of the buddha nature. If your rule is incorrect, I will aid you by
+      providing a counter-example koan.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="sugar">
+
+</div>
+<div class="container">
+<!--
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		</div>
+	</div>
+-->
+	<div class="row clearfix">
+		<div class="col-md-1 column">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      <span class="label label-default sr-only">Has the buddha nature</span>
+      <!-- <img alt="140x140" src="http://lorempixel.com/140/140/" class="img-circle"> <button type="button" class="btn btn-default">Mark</button> -->
+		</div>
+		<div class="col-md-7 column" id="trueKoan">
+      AH 8C 9D
+		</div>
+		<div class="col-md-4 column">
+      <p><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      This is a koan that has the buddha nature.</p>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-1 column">
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      <span class="label label-default sr-only">Does not have the buddha nature</span>
+      <!-- <img alt="140x140" src="http://lorempixel.com/140/140/" class="img-circle"> <button type="button" class="btn btn-default">Mark</button> -->
+		</div>
+		<div class="col-md-7 column" id="falseKoan">
+      9D 8H KH QH JH
+		</div>
+		<div class="col-md-4 column">
+      <p><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      This is a koan that does not have the buddha nature.</p>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-1 column">
+      <button type="button" class="btn btn-default">Mark</button>
+		</div>
+		<div class="col-md-7 column">
+			<form role="form">
+				<div class="form-group">
+					 <input type="text" class="form-control" id="koan-entry" value="AH 2H 3H">
+                    <div id="koan-help"></div>
+				</div>
+			</form>
+      <!--
+			<form role="form">
+				<div class="form-group">
+					 <label for="exampleInputEmail1">Email address</label><input type="email" class="form-control" id="exampleInputEmail1">
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputPassword1">Password</label><input type="password" class="form-control" id="exampleInputPassword1">
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputFile">File input</label><input type="file" id="exampleInputFile">
+					<p class="help-block">
+						Example block-level help text here.
+					</p>
+				</div>
+				<div class="checkbox">
+					 <label><input type="checkbox"> Check me out</label>
+				</div> <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+      -->
+		</div>
+		<div class="col-md-4 column">
+      <p><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      You can enter your own koan here, and click "Mark" to learn if it has the buddha nature.</p>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-8 column">
+			<form role="form">
+				<div class="form-group">
+					 <input type="text" class="form-control" id="rule-guess" placeholder="A koan has the buddha nature if and only if...">
+				</div>
+			</form>
+		</div>
+		<div class="col-md-4 column">
+      <p><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        When you think you have comprehended the buddha nature, you may enter your guess here. Begin by typing one of the following words:
+      </p>
+      <p>
+				a an the one
+			</p>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-1 column">
+			 <button type="button" class="btn btn-default">I give up</button>
+		</div>
+		<div class="col-md-11 column">
+      <p>To be sure that I understand you correctly, are the following paraphrases equivalent to the rule you have in mind? If so, please press ENTER.</p>
+      <ul class="list-group">
+        <li class="list-group-item">one of the cards is red</li>
+        <li class="list-group-item">at least one of the cards is red</li>
+        <li class="list-group-item">one card is a red card</li>
+      </ul>
+		</div>
+	</div>
+<a id="modal-69278" href="#modal-container-69278" role="button" class="btn" data-toggle="modal">Trigger win</a>
+      
+      <div class="modal fade" id="modal-container-69278" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title" id="myModalLabel">
+                You win!
+              </h4>
+            </div>
+            <div class="modal-body">
+              That was fantastic!
+<table class="table table-hover table-condensed">
+        <thead>
+          <tr>
+<th></th>
+            <th>
+              This game
+            </th>
+            <th>
+              Average
+            </th>
+            <th>
+              Best
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Koans
+            </td>
+            <td>
+              7
+            </td>
+            <td>
+              7.2
+            </td>
+            <td>
+              5
+            </td>
+          </tr>
+
+          <!--<tr class="active">-->
+          <tr>
+            <td>
+              Rule guesses
+            </td>
+            <td>
+              9
+            </td>
+            <td>
+              8.5
+            </td>
+            <td>
+              6
+            </td>
+          </tr>
+<!--
+          <tr class="success">
+          <tr class="warning">
+          <tr class="danger">
+-->
+        </tbody>
+      </table>
+You have played 13 games.
+            </div>
+            <div class="modal-footer">
+               <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button> -->
+			<div class="btn-group">
+				 <button class="btn btn-default">Play another easy game.</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#">Play another easy game.</a>
+					</li>
+					<li>
+						<a href="#">Play a game of medium difficulty.</a>
+					</li>
+<!--
+					<li class="divider">
+					</li>
+-->
+					<li class="disabled">
+						<a href="#">Play a difficult game (not yet unlocked).</a>
+					</li>
+				</ul>
+			</div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <p>
+      Source code is on <a href="https://github.com/sciolizer/zendo-ui">github</a>. <!-- TODO: open in new tab -->
+    </p>
+    <p>
+      Icons are provided by <a href="http://glyphicons.com/">Glyphicons</a>.
+      </p>
+  </div>
+</div>
+<script src="static/zendo.js"></script>
+</body>
+</html>
